@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pet_adopt/config.dart';
 import 'package:pet_adopt/drawerScreen.dart';
 import 'package:pet_adopt/landingPage.dart';
 
@@ -15,16 +16,23 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: 'CircularAir',
       ),
       home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDrawerOpen ? primaryGreen : Colors.grey[200],
       body: SafeArea(
         child: Stack(
           children: [

@@ -209,8 +209,7 @@ class PetOwnerBio extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 25,
-              backgroundImage: NetworkImage(
-                  'https://brandyourself.com/blog/wp-content/uploads/linkedin-profile-picture-too-close.png'),
+              backgroundImage: NetworkImage(customerProfileUrl),
             ),
             SizedBox(width: 10),
             Expanded(
@@ -219,7 +218,7 @@ class PetOwnerBio extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Maya Barksaboka',
+                    'Barksaboka Titan',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                   ),
                   Text('Owner'),

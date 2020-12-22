@@ -22,8 +22,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
               children: [
                 CircleAvatar(
                   radius: 25,
-                  backgroundImage: NetworkImage(
-                      'https://brandyourself.com/blog/wp-content/uploads/linkedin-profile-picture-too-close.png'),
+                  backgroundImage: NetworkImage(userProfileUrl),
                 ),
                 SizedBox(width: 10),
                 Expanded(

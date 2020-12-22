@@ -8,15 +8,18 @@ class LandingPage extends StatefulWidget {
   _LandingPageState createState() => _LandingPageState();
 }
 
-var imageUrl =
-    'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
-
 double offsetX = 0;
 double offsetY = 0;
 double scaleFactor = 1;
 
-bool isDrawerOpen = false;
 IconData menuIcon = Icons.menu;
+// bool isDrawerOpen = false;
+
+// setSystemStatusBarColor() {
+//   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+//     statusBarColor: isDrawerOpen ? Colors.grey : primaryGreen,
+//   ));
+// }
 
 class _LandingPageState extends State<LandingPage> {
   @override
@@ -27,7 +30,8 @@ class _LandingPageState extends State<LandingPage> {
       duration: Duration(milliseconds: 250),
       decoration: BoxDecoration(
         color: Colors.grey[200],
-        borderRadius: BorderRadius.circular(isDrawerOpen ? 0 : 30),
+        borderRadius: BorderRadius.circular(isDrawerOpen ? 30 : 0),
+        boxShadow: isDrawerOpen ? shadowList : null,
       ),
       child: Column(
         children: [
@@ -44,15 +48,15 @@ class _LandingPageState extends State<LandingPage> {
                       setState(() {
                         isDrawerOpen = !isDrawerOpen;
                         if (isDrawerOpen == false) {
-                          offsetX = 230;
-                          offsetY = 150;
-                          scaleFactor = 0.6;
-                          menuIcon = Icons.arrow_back_ios;
-                        } else if (isDrawerOpen == true) {
                           offsetX = 0;
                           offsetY = 0;
                           scaleFactor = 1;
                           menuIcon = Icons.menu;
+                        } else if (isDrawerOpen == true) {
+                          offsetX = 230;
+                          offsetY = 150;
+                          scaleFactor = 0.6;
+                          menuIcon = Icons.arrow_back_ios;
                         }
                       });
                     }),
@@ -77,7 +81,7 @@ class _LandingPageState extends State<LandingPage> {
                   ],
                 ),
                 CircleAvatar(
-                  backgroundImage: NetworkImage(imageUrl),
+                  backgroundImage: NetworkImage(userProfileUrl),
                 ),
               ],
             ),
