@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:pet_adopt/config.dart';
 import 'package:pet_adopt/drawerScreen.dart';
 import 'package:pet_adopt/landingPage.dart';
@@ -37,7 +38,18 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Stack(
           children: [
             DrawerScreen(),
-            LandingPage(),
+            // LandingPage(),
+            Container(
+              height: MediaQuery.of(context).size.height,
+              child: Swiper(
+                layout: SwiperLayout.STACK,
+                itemWidth: MediaQuery.of(context).size.width,
+                itemCount: 2,
+                itemBuilder: (context, index) {
+                  return LandingPage();
+                },
+              ),
+            )
           ],
         ),
       ),
